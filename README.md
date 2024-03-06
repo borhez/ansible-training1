@@ -13,6 +13,9 @@ apt install openssh-server
 docker inspect --format '{{.NetworkSettings.IPAddress}}' ubserv  
 - на сервере команда: adduser ub1 ;
 - в контейнере ub1 проверяем вход на сервер (через пароль), ssh ub1@ip_serv (у меня: ssh ub1@172.17.0.2)
+- для копирования ключей ssh, в ub1 делаем команду ssh-copy-id ub1 172.17.0.2 ;
+- если всё хорошо, дальше на сервер заходим без пароля, только ssh ub@172.17.0.2 ;
+
   
   
   
