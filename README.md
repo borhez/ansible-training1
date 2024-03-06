@@ -16,6 +16,8 @@ docker inspect --format '{{.NetworkSettings.IPAddress}}' ubserv
 - для копирования ключей ssh, в node1 делаем команду ssh-copy-id node1@172.17.0.2 ;
 - если всё хорошо, дальше на сервер заходим без пароля, только ssh node1@172.17.0.2 ;
 
+После остановки и повторного запуска контейнеров, нужно запускать заново ssh , везде (server,node1,node2): sevice ssh start ;  
+    
 lsb_release -a узнаем версию OS  
 
 ## установим Ansible для нужной OS:
@@ -28,8 +30,13 @@ $ echo "deb [signed-by=/usr/share/keyrings/ansible-archive-keyring.gpg] http://p
 $ sudo apt update && sudo apt install ansible
 ```
 
-
-  
+На сервере создадим пользователя ansible, создадим в /home/ansible файл .ssh/autorized_keys и скопируем в него паблик-ключи с node1 и node2.  
+Поменяем владельца, и изменим права доступа:  
+```
+chown ansible:ansible /home/ansible/.ssh/autorized_keys
+chmod 600 /home/ansible/.ssh/autorized_keys
+```
+ 
   
   
 
