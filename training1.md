@@ -3,8 +3,8 @@ apt update
 apt install openssh-server  
 /etc/init.d/ssh start    или    service ssh start  
 - проверим ssh localhost, фейл (просит пароль)  
-  в папке /root/.ssh/ команда ssh-keygen
-  cat id_rsa.pub >> authorized_keys
+  в папке /root/.ssh/ команда ssh-keygen  
+  cat id_rsa.pub >> authorized_keys  
   ssh localhost , должна сработать  
 То же самое проделываем для других двух контейнеров , node1, node2.  
   
