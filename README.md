@@ -36,7 +36,9 @@ $ sudo apt update && sudo apt install ansible
 chown ansible:ansible /home/ansible/.ssh/autorized_keys
 chmod 600 /home/ansible/.ssh/autorized_keys
 ```
- 
+apt install sudo (на сервере)  
+visudo (в файле добавим строчку ansible ALL=(ALL:ALL) NOPASSWD: ALL  
+
   
   
 
