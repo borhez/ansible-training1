@@ -8,4 +8,10 @@ apt install ansible -y
 mkdir /root/.ssh && cd /root/.ssh && ssh-keygen
 #ssh-copy-id ansible@host1
 #ssh-copy-id ansible@host2
-echo "ok"
+n=1
+while [[ $n -le $1 ]] do
+  ssh-copy-id ansible@host$n
+  (( n++ ))
+done 
+
+

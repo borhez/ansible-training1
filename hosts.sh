@@ -1,5 +1,5 @@
 #!/bin/bash
-N_HOSTS=3
+N_HOSTS=$1
 PATH_TO_FILE=$(realpath ./container-hosts.sh)
 
 n=1
@@ -12,5 +12,6 @@ do
   docker exec -i ${ID} /bin/bash ./installme.sh
 
   let "n=$n + 1"
+  # (( n++ ))
 done
 
