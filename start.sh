@@ -10,8 +10,10 @@ if [[ ! $1 =~ $REGEXPR ]]
   exit 0
 fi
 
-hosts.sh $1
-server.sh $1
+NET1=ansblserv1_hosts
+docker network create $NET1
+./hosts.sh $1 $NET1
+./server.sh $1 $NET1
 
 echo "FINISH SUCCESS"
 

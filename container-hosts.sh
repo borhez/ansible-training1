@@ -6,5 +6,5 @@ service ssh start
 
 echo "adduser ansible:"
 adduser ansible
-
+echo ok
 
