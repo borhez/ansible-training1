@@ -12,8 +12,8 @@ fi
 
 NET1=ansblserv1_hosts
 docker network create $NET1
-./hosts.sh $1 $NET1
-./server.sh $1 $NET1
+./src/hosts.sh $1 $NET1
+./src/server.sh $1 $NET1
 
 echo -e "\033[35mFINISH SUCCESS\033[30m"
 
