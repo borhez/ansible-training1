@@ -1,10 +1,9 @@
 #!/bin/bash
 apt update
-echo "install openssh-server"
+echo -e "\033[35minstall openssh-server\033[30m"
 apt install openssh-server -y
 service ssh start
 
-echo "adduser ansible:"
+echo -e "\033[35madduser ansible:\033[30m"
 adduser ansible
-echo ok
 

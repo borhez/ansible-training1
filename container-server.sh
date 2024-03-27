@@ -1,16 +1,10 @@
-echo "update"
+echo -e "\033[35mupdate\033[30m"
 apt update
-echo "ok"
 
-echo "installing..."
+echo -e "\033[35minstalling...\033[30m"
 apt install ansible -y
-#apt install openssh-client
+
 mkdir /root/.ssh && cd /root/.ssh && ssh-keygen
-n=1
-while [[ $n -le $1 ]]
-do
-  ssh-copy-id ansible@host$n
-  (( n++ ))
-done 
+
 
 

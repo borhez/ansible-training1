@@ -15,5 +15,5 @@ docker network create $NET1
 ./hosts.sh $1 $NET1
 ./server.sh $1 $NET1
 
-echo "FINISH SUCCESS"
+echo -e "\033[35mFINISH SUCCESS\033[30m"
 
