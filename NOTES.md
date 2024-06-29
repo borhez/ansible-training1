@@ -1,8 +1,8 @@
-## Устанавливаю Ansible на локальную машину Debian11 (соответствует версии ansible для ubuntu focal)   
-```
-$ UBUNTU_CODENAME=jammy
-$ wget -O- "https://keyserver.ubuntu.com/pks/lookup?fingerprint=on&op=get&search=0x6125E2A8C77F2818FB7BD15B93C4A3FD7BB9C367" | sudo gpg --dearmour -o /usr/share/keyrings/ansible-archive-keyring.gpg
-$ echo "deb [signed-by=/usr/share/keyrings/ansible-archive-keyring.gpg] http://ppa.launchpad.net/ansible/ansible/ubuntu $UBUNTU_CODENAME main" | sudo tee /etc/apt/sources.list.d/ansible.list
-$ sudo apt update && sudo apt install ansible
-```
-
+## Check hosts (ubuntu docker containers)
+1) Run start.sh 3 (создадутся 4 контейнера, один сервер-ansible и 3 управляемых ноды.
+2) Fill inventory:
+- cat hosts.yml
+  172.18.0.2
+  172.18.0.3
+  172.18.0.4
+- на сервере-ansible(172.18.0.5) выполнить: ansible all -i hosts.yml -m ping -u ansible
